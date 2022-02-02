@@ -16,7 +16,6 @@ mod get_order;
 pub use api_error_code::ApiErrorCode;
 mod error;
 pub use error::Error;
-use rand::prelude::*;
 use serde::{de::DeserializeOwned, Deserialize, Serialize};
 use std::time::Duration;
 use tokio::time::sleep;
@@ -456,12 +455,12 @@ impl Gateway {
     // Randomized exponential backoff policy (cf.
     // https://cloud.google.com/appengine/articles/scalability#backoff ).
     async fn randomized_exponential_backoff(&self, mut delay_ms: f64) -> f64 {
-        let mut rng = rand::thread_rng();
+        //let mut rng = rand::thread_rng();
 
         // Random component to avoid thundering herd problem (values taken from
         // https://github.com/GoogleCloudPlatform/appengine-gcs-client/blob/master/java/src/main/
         // java/com/google/appengine/tools/cloudstorage/RetryHelper.java ).
-        delay_ms = (rng.gen::<f64>() / 2.0 + 0.75) * delay_ms;
+        //delay_ms = (rng.gen::<f64>() / 2.0 + 0.75) * delay_ms;
 
         sleep(Duration::from_millis(delay_ms as u64)).await;
 

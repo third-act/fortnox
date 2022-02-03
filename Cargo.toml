@@ -1,7 +1,7 @@
 [package]
 name = "fortnox"
-version = "0.1.1"
-edition = "2021"
+version = "0.1.2"
+edition = "2018"
 license = "MIT"
 description = "A library for integrating with Fortnox."
 repository = "https://github.com/third-act/fortnox/"

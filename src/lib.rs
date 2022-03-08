@@ -10,6 +10,7 @@ mod add_customer;
 mod add_order;
 mod api_error_code;
 mod cancel_order;
+mod edit_order;
 mod get_article;
 mod get_customer;
 mod get_order;
